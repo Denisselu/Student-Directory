@@ -2,7 +2,7 @@ def input_students
   puts "Please, enter the names of the students: "
   puts "To finish, just hit return twice."
 # For Exercise #2, we'll be priting names with a specific letter:
-puts "NOTE: Only printing names that start with letter 'T'."
+puts "NOTE: Only printing names that are shorter than 12 chars."
 # Create an empty array:
   students = []
 # Get the first name:
@@ -26,7 +26,7 @@ end
 
 def print(students)
   students.each do |student|
-    if student[:name].start_with?("T")
+    if student[:name].length < 12
       puts "#{student[:name]}, (#{student[:cohort]} cohort)"
     end
   end
