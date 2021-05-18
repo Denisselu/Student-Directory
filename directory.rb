@@ -1,6 +1,8 @@
 def input_students
   puts "Please, enter the names of the students: "
   puts "To finish, just hit return twice."
+# For Exercise #2, we'll be priting names with a specific letter:
+puts "NOTE: Only printing names that start with letter 'T'."
 # Create an empty array:
   students = []
 # Get the first name:
@@ -23,8 +25,10 @@ def print_header
 end
 
 def print(students)
-  students.each.with_index(1) do |student, index|
-  puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+  students.each do |student|
+    if student[:name].start_with?("T")
+      puts "#{student[:name]}, (#{student[:cohort]} cohort)"
+    end
   end
 end
 
