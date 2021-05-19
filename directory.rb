@@ -1,19 +1,20 @@
 def input_students
-  puts "Please, enter the names of the students: "
-  puts "To finish, just hit return twice."
-# For Exercise #2, we'll be priting names with a specific letter:
-puts "NOTE: Only printing names that are shorter than 12 chars."
+  puts "Please, enter the names and hobbies of the students. To finish, just hit return twice."
 # Create an empty array:
   students = []
 # Get the first name:
   name = gets.chomp
+# Get to know their hobbies:
+  hobbies = gets.chomp  
 # While the name is not empty, repeat this code:
-  while !name.empty? do
+  while !name.empty? && !hobbies.empty? do
   # Add the student hash to the array:
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: :november, hobbies: hobbies}
     puts "Now, we have #{students.count} students."
 # Get another name from the user:
     name = gets.chomp
+# Get another hobbie from the user:
+    hobbies = gets.chomp
 end
 #return the array of students:
 students
@@ -26,9 +27,7 @@ end
 
 def print(students)
   students.each do |student|
-    if student[:name].length < 12
-      puts "#{student[:name]}, (#{student[:cohort]} cohort)"
-    end
+    puts "#{student[:name]}, (#{student[:cohort]} cohort, (#{student[:hobbies]}))"
   end
 end
 
